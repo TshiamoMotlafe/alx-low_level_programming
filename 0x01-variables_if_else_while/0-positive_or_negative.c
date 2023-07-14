@@ -19,7 +19,7 @@ int main(void)
 	srand(time(0));
 	/* Generate a random number */
 	n = rand() - RAND_MAX / 2;
- /* Check if the number is positive, negative, or zero */
+ /* Check if the number is positive, negative, or zero and Print the value of n and its sign */
     if (n > 0) {
         printf("%d is positive\n", n);
     } else if (n == 0) {
