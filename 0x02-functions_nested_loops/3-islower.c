@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 /**
  * _islower - Checks if a character is lowercase
  *
@@ -8,8 +9,14 @@
  */
 int _islower(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z'){
 		return 1;
-	else
+}
 		return 0;
+}
+void write_result(int result) {
+    char output[2];
+    output[0] = result + '0';
+    output[1] = '\n';
+    write(STDOUT_FILENO, output, 2);
 }
