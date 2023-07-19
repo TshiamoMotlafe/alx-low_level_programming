@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - Entry point of the program
  *
@@ -7,21 +6,25 @@
  *              separated by a comma and space, followed by a new line.
  *              It uses a loop to calculate the Fibonacci sequence and prints
  *              each number using the printf function.
- *
  * Return: 0 (Success)
  */
 int main(void)
 {
-	unsigned long long num1 = 1, num2 = 2, nextNum, count;
+	int limit = 50;
+	int fibonacci[limit];
+	int i;
 
-	printf("%llu, %llu", num1, num2);
-
-	for (count = 3; count <= 50; count++)
+	fibonacci[0] = 1;
+	fibonacci[1] = 2;
+	
+	for (i = 3; i <= limit; i++)
 	{
-	nextNum = num1 + num2;
-	printf(", %llu", nextNum);
-	num1 = num2;
-	num2 = nextNum;
+	fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+	}
+	printf("%llu", fibonacci[0]);
+	for (i = 1; i < limit; i++)
+	{
+	printf(", %llu", fibonacci[i]);
 	}
 
 	printf("\n");
