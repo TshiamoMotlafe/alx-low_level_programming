@@ -18,6 +18,7 @@ void times_table(void)
 		for (column = 0; column <= 9; column++)
 		{
 			int product = row * column;
+
 			printf("%2d", product);
 
 			if (column != 9)
