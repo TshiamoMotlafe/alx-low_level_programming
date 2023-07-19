@@ -11,7 +11,7 @@
 int main(void)
 {
 	int limit = 50;
-	int fibonacci[limit];
+	int fibonacci[50];
 	int i;
 
 	fibonacci[0] = 1;
@@ -21,10 +21,10 @@ int main(void)
 	{
 	fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
 	}
-	printf("%llu", fibonacci[0]);
+	printf("%d", fibonacci[0]);
 	for (i = 1; i < limit; i++)
 	{
-	printf(", %llu", fibonacci[i]);
+	printf(", %d", fibonacci[i]);
 	}
 
 	printf("\n");
