@@ -26,7 +26,7 @@ int main(void)
 	num2 = nextNum;
 	}
 	printf("%d\n", sum);
-
+}
 	return (0);
 }
 
