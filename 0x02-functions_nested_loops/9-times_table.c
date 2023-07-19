@@ -19,10 +19,7 @@ void times_table(void)
 		{
 			int product = row * column;
 
-			printf("%2d, ", product);
-
-			if (column != 9)
-				printf(", ");
+			printf("%2d ", product);
 		}
 
 		printf("\n");
