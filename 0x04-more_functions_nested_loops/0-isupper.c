@@ -10,7 +10,7 @@ int _isupper(int c)
 {
 	/* Check if the character is within the ASCII range for uppercase letters */
 	if (c >= 'A' && c <= 'Z')
-	return 1;
+	return (1);
 	else
-	return 0;
+	return (0);
 }
