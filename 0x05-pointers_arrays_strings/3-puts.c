@@ -1,20 +1,21 @@
-#include<stdio.h>
+#include <stdio.h>
 /**
- * _strlen - Calculates the length of a string.
- * @s: Pointer to the string whose length needs to be calculated.
+ * _puts - Prints a string followed by a new line to stdout.
+ * @str: Pointer to the string to be printed.
  *
- * Return: The length of the string (number of characters excluding '\0').
+ * Description:
+ * This function takes a pointer to a null-terminated string and prints the
+ * characters of the string to the standard output using the putchar function
+ * until it reaches the null terminator '\0'. It then prints a new line
+ * character '\n' to add a line break after the string.
  */
-int _strlen(char *s)
-{
-	int length = 0;
-
-	while (*s != '\0')
+void _puts(char *str)
+{  
+	while (*str != '\0')
 	{
-	length++;
-	s++;
+	putchar(*str);
+	str++;
 	}
 
-	return (length);
+	putchar('\n');
 }
-
