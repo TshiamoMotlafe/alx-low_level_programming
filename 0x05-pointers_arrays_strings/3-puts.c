@@ -10,7 +10,7 @@
  * character '\n' to add a line break after the string.
  */
 void _puts(char *str)
-{  
+{
 	while (*str != '\0')
 	{
 	putchar(*str);
