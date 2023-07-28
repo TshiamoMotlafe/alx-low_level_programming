@@ -13,9 +13,6 @@ char *leet(char *str)
 
 	int i, j;
 
-	if (str == NULL)
-	return (NULL);
-
 	for (i = 0; str[i] != '\0'; i++)
 	{
 	for (j = 0; leet_chars[j] != '\0'; j++)
