@@ -1,75 +1,55 @@
-#include<stdio.h>
+#include <stdio.h>
 #include <string.h>
-void reverse_string(char *str)
-{
-        int i, j;
-        char temp;
-
-        for (i = 0, j = strlen(str) - 1; i < j; i++, j--)
-        {
-                temp = str[i];
-                str[i] = str[j];
-                str[j] = temp;
-        }
-}
-int strlen(char *str)
-{
-        int len = 0;
-        while (str[len] != '\0')
-                len++;
-        return (len);
-}
 /**
  * infinite_add - Adds two numbers represented as strings.
- * @n1: The first number string.
- * @n2: The second number string.
+ * @n1: The first number as a string.
+ * @n2: The second number as a string.
  * @r: The buffer to store the result.
- * @size_r: The size of the buffer.
+ * @size_r: The size of the result buffer.
  *
- * Return: A pointer to the result string @r, or NULL if the result
- *         cannot be stored in the buffer.
+ * Return: A pointer to the result (r), or 0 if the result cannot be stored in r.
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len_n1 = 0, len_n2 = 0, max_len = 0, carry = 0;
-	int index_n1 = 0, index_n2 = 0, index_r = 0;
-	int digit_n1 = 0, digit_n2 = 0, sum = 0, result_digit = 0;
+	int len1 = strlen(n1);
 
-	len_n1 = strlen(n1);
-	len_n2 = strlen(n2);
-	max_len = (len_n1 > len_n2) ? len_n1 : len_n2;
+	int len2 = strlen(n2);
 
-	/* Check if the result can be stored in the buffer */
+	int carry = 0;
+
+	int max_len = len1 > len2 ? len1 : len2;
+
+	int digit1;
+
+	int digit2;
+
+	int sum;
+
+	int i;
+
 	if (max_len + 1 > size_r)
-		return (NULL);
+		return (0);
 
-	index_n1 = len_n1 - 1;
-	index_n2 = len_n2 - 1;
+	r[max_len + 1] = '\0';
 
-	/* Perform addition from right to left */
-	while (index_n1 >= 0 || index_n2 >= 0 || carry)
+	for (i = 0; i < max_len || carry; i++)
 	{
-		digit_n1 = (index_n1 >= 0) ? n1[index_n1] - '0' : 0;
-		digit_n2 = (index_n2 >= 0) ? n2[index_n2] - '0' : 0;
-
-		sum = digit_n1 + digit_n2 + carry;
+		digit1 = (i < len1) ? (n1[len1 - i - 1] - '0') : 0;
+		digit2 = (i < len2) ? (n2[len2 - i - 1] - '0') : 0;
+		sum = digit1 + digit2 + carry;
 		carry = sum / 10;
-		result_digit = sum % 10;
-
-		/* Check if the result can be stored in the buffer */
-		if (index_r >= size_r - 1)
-			return (NULL);
-
-		r[index_r] = result_digit + '0';
-		index_r++;
-		index_n1--;
-		index_n2--;
+		r[max_len - i] = (sum % 10) + '0';
 	}
 
-	r[index_r] = '\0'; /* Null-terminate the result */
+	if (max_len >= size_r)
+		return (0);
 
-	/* Reverse the result string to get the correct order */
-	reverse_string(r);
+	if (r[0] == '0')
+	{
+		/* Shift the result to remove leading zero */
+		for (i = 0; i < max_len; i++)
+			r[i] = r[i + 1];
+	}
 
 	return (r);
 }
