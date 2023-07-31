@@ -3,7 +3,6 @@
  * _strchr - Locates the first occurrence of character c in string s
  * @s: Pointer to the input string
  * @c: Character to be located
- *
  * Return: A pointer to the first occurrence of character c in string s,
  *         or NULL if the character is not found.
  */
