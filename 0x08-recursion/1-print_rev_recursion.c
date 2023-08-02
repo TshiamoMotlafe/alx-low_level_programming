@@ -10,7 +10,6 @@ void _print_rev_recursion(char *s)
 {
 	if (*s == '\0')
 	{
-		/* Base case: If the current character is the null terminator, end the recursion */
 		return;
 	}
 
