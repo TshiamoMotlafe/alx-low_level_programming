@@ -10,7 +10,7 @@ void _puts_recursion(char *s)
 {
 	if (*s == '\0')
 	{
-		/* Base case: If the current character is the null terminator, end the recursion */
+		
 		putchar('\n');
 		return;
 	}
