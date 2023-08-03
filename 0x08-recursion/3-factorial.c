@@ -6,7 +6,6 @@
  */
 int factorial(int n)
 {
-	int result;
 
 	int i;
 
@@ -21,12 +20,6 @@ int factorial(int n)
 	{
 		return (-1);
 	}
-	result = 1;
-	for (i = 1; i <= n; i++)
-	{
-	result *= i;	
-	}
-
 	/* Calculate factorial recursively */
-	return (result);
+	return (n * factorial(n - 1));
 }
