@@ -1,27 +1,42 @@
-#include<stdio.h>
-#include<unistd.h>
+#include <stdio.h>
 /**
- * is_prime_number - Checks if a number is a prime number.
- * @n: The number to be checked.
+ * is_prime_recursive - Helper function to check if a number is prime recursively.
+ * @n: The input number.
+ * @divisor: The current divisor to check divisibility.
  *
- * Return: 1 if the number is prime, 0 otherwise.
+ * Return: 1 if the number is prime, otherwise 0.
+ */
+int is_prime_recursive(int n, int divisor)
+{
+	if (n < 2)
+	{
+	return (0);
+	}
+
+	if (n == 2)
+	{
+	return (1);
+	}
+
+	if (divisor * divisor > n)
+	{
+        return (1);
+	}
+
+	if (n % divisor == 0)
+	{
+	return (0);
+	}
+
+	return (is_prime_recursive(n, divisor + 1));
+}
+/**
+ * is_prime_number - Check if a number is prime.
+ * @n: The input number.
+ *
+ * Return: 1 if the number is prime, otherwise 0.
  */
 int is_prime_number(int n)
 {
-	int i;
-
-	/* Base cases: 0, 1, and negative numbers are not prime */	
-	if (n <= 1)
-	{
-	return (0);
-	}
-	for (i = 2; i * i <= n; i++)
-	{
-	if (n % i == 0)
-	{
-	/* If n is divisible by any number in the loop, it's not prime */
-	return (0);
-	}
-	}
-	return (1);
+	return (is_prime_recursive(n, 2));
 }
