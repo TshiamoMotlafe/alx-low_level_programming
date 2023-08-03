@@ -6,9 +6,6 @@
  */
 int factorial(int n)
 {
-
-	int i;
-
 	/* Base case: Factorial of 0 is 1 */
 	if (n == 0)
 	{
