@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * is_prime_recursive - Helper function to check if a number is prime recursively.
+ * is_prime_recursive - function to check if a number is prime recursively.
  * @n: The input number.
  * @divisor: The current divisor to check divisibility.
  *
@@ -20,7 +20,7 @@ int is_prime_recursive(int n, int divisor)
 
 	if (divisor * divisor > n)
 	{
-        return (1);
+	return (1);
 	}
 
 	if (n % divisor == 0)
