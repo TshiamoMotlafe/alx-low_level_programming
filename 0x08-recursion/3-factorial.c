@@ -11,7 +11,6 @@ int factorial(int n)
 	{
 		return (1);
 	}
-	
 	/* Error case: Return -1 if n is less than 0 */
 	if (n < 0)
 	{
