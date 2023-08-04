@@ -1,5 +1,5 @@
 
-
+#include<stdio.h>
 #include "main.h"
 
 int _putchar(char c) { /* implementation */ }
@@ -8,10 +8,8 @@ int _isalpha(int c) { /* implementation */ }
 int _abs(int n) { /* implementation */ }
 int _isupper(int c) { /* implementation */ }
 int _isdigit(int c) { /* implementation */ }
-int _strlen(char *s) { return s; }
-void _puts(char *s) {
- printf(*s);      
-	return *s;}
+int _strlen(char *s) {  }
+void _puts(char *s) {}
 char *_strcpy(char *dest, char *src) { /* implementation */ }
 int _atoi(char *s) { /* implementation */ }
 char *_strcat(char *dest, char *src) { /* implementation */ }
