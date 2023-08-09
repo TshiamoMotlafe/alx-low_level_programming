@@ -24,15 +24,17 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 	return (NULL);
 	total_length = 0;
-	for (i = 0; i < ac; i++) {
+	for (i = 0; i < ac; i++)
+	{
 	if (av[i] != NULL)
 	total_length += strlen(av[i]) + 1;
 	}
+	total_length++;
 	concatenated = malloc(total_length * sizeof(char));
 	if (concatenated == NULL)
 	return (NULL);
 	position = 0;
-	for (j = 0; j< ac; j++)
+	for (j = 0; j < ac; j++)
 	{
 	if (av[j] != NULL)
 	{
