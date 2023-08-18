@@ -1,12 +1,12 @@
 #include <stdarg.h>
 
 /**
- *  * sum_them_all - Sums up a variable number of arguments.
- *   * @n: The number of arguments.
- *    * @...: The variable arguments to be summed.
- *     *
- *      * Return: The sum of the variable arguments.
- *       */
+ * sum_them_all - Sums up a variable number of arguments.
+ * @n: The number of arguments.
+ * @...: The variable arguments to be summed.
+ *
+ * Return: The sum of the variable arguments.
+ */
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list args;
